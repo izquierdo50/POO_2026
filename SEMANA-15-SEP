@@ -1,0 +1,84 @@
+public class Empleado {
+    private String nombre;
+    private String cargo;
+    private double salarioBase;
+    private int anosExperiencia;
+
+    public Empleado(String nombre, String cargo, double salarioBase, int anosExperiencia) {
+        this.nombre = nombre;
+        this.cargo = cargo;
+        this.salarioBase = salarioBase;
+        this.anosExperiencia = anosExperiencia;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public double getSalarioBase() {
+        return salarioBase;
+    }
+
+    public void setSalarioBase(double salarioBase) {
+        this.salarioBase = salarioBase;
+    }
+
+    public int getAnosExperiencia() {
+        return anosExperiencia;
+    }
+
+    public void setAnosExperiencia(int anosExperiencia) {
+        this.anosExperiencia = anosExperiencia;
+    }
+
+    public String verDetalle() {
+        return "Nombre: " + nombre + " Cargo: " + cargo + " Salario: " + salarioBase;
+    }
+
+    public String trabajar(int horas) {
+        return nombre + " trabaja " + horas + " horas";
+    }
+
+    public String tomarDescanso() {
+        return nombre + " esta descansando";
+    }
+
+    public String trabajarYDescansar(int horas) {
+        return trabajar(horas) + " y " + tomarDescanso();
+    }
+
+    public double calcularBono(float porcentaje) {
+        return salarioBase * porcentaje / 100;
+    }
+
+    public double calcularBono(int porcentaje) {
+        return salarioBase * porcentaje / 100;
+    }
+
+    public double calcularSalarioTotal(double bono, int diasTrabajados) {
+        return (salarioBase / 30 * diasTrabajados) 
+        
+        + bono;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Empleado e1 = new Empleado("Laura Gomez", "Analista", 2000000.0, 5);
+        System.out.println(e1.verDetalle());
+        System.out.println(e1.trabajarYDescansar(8));
+        System.out.println("Bono: " + e1.calcularBono(16));
+    }
+}
