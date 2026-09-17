@@ -1,0 +1,101 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.parcial.poo;
+
+/**
+ *
+ * @author prestamo
+ */
+public class Empleado {
+    private String nombre;
+    private String cargo;
+    private double salarioBase;
+    private int añosExperiencia;
+
+    public Empleado() {
+    }
+
+    public Empleado(String nombre, String cargo, double salarioBase, int añosExperiencia) {
+        this.nombre = nombre;
+        this.cargo = cargo;
+        this.salarioBase = salarioBase;
+        this.añosExperiencia = añosExperiencia;
+        
+        
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public double getSalarioBase() {
+        return salarioBase;
+    }
+
+    public void setSalarioBase(double salarioBase) {
+        this.salarioBase = salarioBase;
+    }
+
+    public int getAñosExperiencia() {
+        return añosExperiencia;
+    }
+
+    public void setAñosExperiencia(int añosExperiencia) {
+        this.añosExperiencia = añosExperiencia;
+    }
+
+    
+    public String verDetalle() {
+        return "Empleado{" + "nombre=" + nombre + ", cargo=" + cargo + ", salarioBase=" + salarioBase + ", a\u00f1osExperiencia=" + añosExperiencia + '}';
+    }
+     public String trabajar(int horas) {
+        return nombre + " trabaja " + horas + " horas";
+     }   
+    public String tomarDescanso() {
+        return nombre + " toma descanso";
+    }
+    public String trabajarYDescansar(int horas){
+        return nombre + " trabajarYDescansar ";
+    }
+    public double calcularBono(float porcentaje) {
+        return salarioBase * porcentaje / 100;
+        
+    }public double calcularBono(int porcentaje) {
+        return salarioBase * porcentaje / 100;
+}
+
+
+
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.parcial.poo;
+
+/**
+ *
+ * @author prestamo
+ */
+public class ParcialPoo {
+
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+    }
+}
+
+   
