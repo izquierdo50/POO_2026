@@ -1,0 +1,80 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.sesion28sept.poo;
+
+/**
+ *
+ * @author prestamo
+ */
+public class Producto {
+    String nombre;
+    String categoria;
+    Double precio;
+    int CantidadStock;
+
+    public Producto() {
+    }
+
+    public Producto(String nombre, String categoria, Double precio, int CantidadStock) {
+        this.nombre = nombre;
+        this.categoria = categoria;
+        this.precio = precio;
+        this.CantidadStock = CantidadStock;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
+    }
+
+    public int getCantidadStock() {
+        return CantidadStock;
+    }
+
+    public void setCantidadStock(int CantidadStock) {
+        this.CantidadStock = CantidadStock;
+    }
+    public String verDetalles(){
+        return this.nombre + "pertenece a la categoria de "+ this.categoria +"tecnologia"
+                +this.precio+"precio"+this.CantidadStock+"CantidadStock";   
+    }
+    
+    public Double calcularDescuento(int porcentaje){
+       return precio * porcentaje / 100.0;
+    }
+
+    public Double calcularDescuento(Double porcentaje){
+        return precio * porcentaje / 100.0;
+    }
+    public Double precioFinal(Double porcentaje){
+        return precio - calcularDescuento(porcentaje);
+    }
+   public int vender(int cantidad){
+    if (cantidad <= this.CantidadStock){
+        this.CantidadStock = this.CantidadStock - cantidad;
+        return this.CantidadStock; 
+    }
+    
+    }
+}
