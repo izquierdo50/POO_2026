@@ -1,28 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.sesion28sept.poo;
 
-/**
- *
- * @author prestamo
- */
 public class Producto {
-    String nombre;
-    String categoria;
-    Double precio;
-    int CantidadStock;
 
+    // 1. ATRIBUTOS PRIVADOS
+    private String nombre;
+    private String categoria;
+    private double precio;
+    private int cantidadStock;
+
+    // 2. CONSTRUCTOR VACÍO
     public Producto() {
     }
 
-    public Producto(String nombre, String categoria, Double precio, int CantidadStock) {
+    // 3. CONSTRUCTOR CON PARÁMETROS
+    public Producto(String nombre, String categoria,
+                    double precio, int cantidadStock) {
+
         this.nombre = nombre;
         this.categoria = categoria;
         this.precio = precio;
-        this.CantidadStock = CantidadStock;
+        this.cantidadStock = cantidadStock;
     }
+
+    // 4. GETTERS Y SETTERS
 
     public String getNombre() {
         return nombre;
@@ -40,41 +39,63 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public Double getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Double precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
     public int getCantidadStock() {
-        return CantidadStock;
+        return cantidadStock;
     }
 
-    public void setCantidadStock(int CantidadStock) {
-        this.CantidadStock = CantidadStock;
-    }
-    public String verDetalles(){
-        return this.nombre + "pertenece a la categoria de "+ this.categoria +"tecnologia"
-                +this.precio+"precio"+this.CantidadStock+"CantidadStock";   
-    }
-    
-    public Double calcularDescuento(int porcentaje){
-       return precio * porcentaje / 100.0;
+    public void setCantidadStock(int cantidadStock) {
+        this.cantidadStock = cantidadStock;
     }
 
-    public Double calcularDescuento(Double porcentaje){
-        return precio * porcentaje / 100.0;
+    // 5. MÉTODO PARA VER LOS DETALLES
+    public String verDetalle() {
+
+        return "Nombre: " + nombre
+                + "\nCategoría: " + categoria
+                + "\nPrecio: $" + precio
+                + "\nStock: " + cantidadStock;
     }
-    public Double precioFinal(Double porcentaje){
+
+    // 6. MÉTODO PARA CALCULAR DESCUENTO (ENTERO)
+    public double calcularDescuento(int porcentaje) {
+
+        return precio * porcentaje / 100;
+    }
+
+    // 7. MÉTODO PARA CALCULAR DESCUENTO (DECIMAL)
+    public double calcularDescuento(double porcentaje) {
+
+        return precio * porcentaje / 100;
+    }
+
+    // 8. MÉTODO PARA CALCULAR PRECIO FINAL
+    public double calcularPrecioFinal(double porcentaje) {
+
         return precio - calcularDescuento(porcentaje);
     }
-   public int vender(int cantidad){
-    if (cantidad <= this.CantidadStock){
-        this.CantidadStock = this.CantidadStock - cantidad;
-        return this.CantidadStock; 
-    }
-    
+
+    // 9. MÉTODO PARA VENDER PRODUCTOS
+    public String vender(int cantidad) {
+
+        if (cantidad <= cantidadStock) {
+
+            cantidadStock = cantidadStock - cantidad;
+
+            return "Venta realizada. Quedan "
+                    + cantidadStock + " unidades disponibles.";
+
+        } else {
+
+            return "Error: No hay suficiente inventario "
+                    + "para realizar la venta.";
+        }
     }
 }
